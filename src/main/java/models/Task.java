@@ -36,11 +36,12 @@ public class Task {
         this.description = description;
     }
 
-    public void setCompleted(boolean completed){
-        this.completed = completed;
-    }
+//    public void setCompleted(boolean completed){
+//        this.completed = completed;
+//    }
 
     public int setId(int id) {
+        this.id = id;
         return id;
     }
 

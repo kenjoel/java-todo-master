@@ -15,9 +15,9 @@ public interface storyDao {
     Task findById(int id);
 
     //update Story
-//    void update(int a, String b );
+    void update(int a, String b );
 
     //delete
-//    void deleteTask(int a);
-//    void clearAllTasks();
+    void deleteTask(int a);
+    void clearAllTasks();
 }

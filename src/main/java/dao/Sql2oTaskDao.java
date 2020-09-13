@@ -28,8 +28,8 @@ public class Sql2oTaskDao implements storyDao { //implementing our interface
     @Override
     public List<Task> getAll() {
         try(Connection con = sql2o.open()){
-            return con.createQuery("SELECT * FROM tasks") //raw sql
-                    .executeAndFetch(Task.class); //fetch a list
+            Query query = con.createQuery("SELECT * FROM tasks"); //raw sql
+                    return query.executeAndFetch(Task.class); //fetch a list
         }
     }
 
@@ -41,4 +41,44 @@ public class Sql2oTaskDao implements storyDao { //implementing our interface
                     .executeAndFetchFirst(Task.class); //fetch an individual item
         }
     }
+
+    @Override
+    public void update(int id, String description){
+        String sql = "UPDATE tasks SET description =:description WHERE  id = :id";
+        try(Connection con = sql2o.open()){
+            con.createQuery(sql)
+                    .addParameter("description", description)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        }catch (Sql2oException ex) {
+            System.out.println(ex);
+        }
+
+    }
+
+    @Override
+    public void deleteTask(int id){
+        try(Connection con = sql2o.open()){
+            String sql = "DELETE FROM tasks WHERE id = :id";
+            con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        }catch (Sql2oException ex){
+            System.out.println(ex);
+        }
+    }
+
+    @Override
+    public void clearAllTasks(){
+        String sql = "DELETE FROM tasks";
+
+        try(Connection con = sql2o.open()){
+            con.createQuery(sql)
+                    .executeUpdate();
+        }catch (Sql2oException ey){
+            System.out.println(ey);
+        }
+
+    }
+
 }
