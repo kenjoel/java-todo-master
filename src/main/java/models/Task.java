@@ -40,7 +40,7 @@ public class Task {
         this.completed = completed;
     }
 
-    public int setId() {
+    public int setId(int id) {
         return id;
     }
 
