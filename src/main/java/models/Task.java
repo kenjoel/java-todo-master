@@ -40,50 +40,46 @@ public class Task {
         return Objects.hash(description, completed, createdAt, id, categoryId);
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+
+        public void setDescription (String description){
+            this.description = description;
+        }
 
 //    public void setCompleted(boolean completed){
 //        this.completed = completed;
 //    }
 
 
-    public int setId(int id) {
-        this.id = id;
-        return id;
-    }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
+
+    public void setCategoryId (int categoryId){
+            this.categoryId = categoryId;
+        }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getCategoryId() {
         return categoryId;
     }
 
+    public boolean getCompleted () {
+            return this.completed;
+        }
 
-    public static void setInstances(ArrayList<Task> instances) {
-        Task.instances = instances;
-    }
+        public LocalDateTime getCreatedAt () {
+            return createdAt;
+        }
 
-    public String getDescription() {
-        return description;
-    }
+        public int getId () {
+            return id;
+        }
 
+        public String getDescription() {
+         return description;
+       }
 
-    public boolean getCompleted() {
-        return this.completed;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public int getId() {
-        return id;
-    }
-}
 
 
 
@@ -99,3 +95,4 @@ public class Task {
 //        instances.remove(id-1); //same reason
 //    }
 
+}

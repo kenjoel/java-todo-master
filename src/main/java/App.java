@@ -61,6 +61,15 @@ public class App {
 //            return null;
 //        }, new HandlebarsTemplateEngine());
 
+//        post("/tasks", (req, res) -> { //URL to make new task on POST route
+//            Map<String, Object> model = new HashMap<>();
+//            String description = req.queryParams("description");
+//            Task newTask = new Task(description);
+//            taskDao.create(newTask);
+//            res.redirect("/");
+//            return null;
+//        }, new HandlebarsTemplateEngine());
+
         //get: show an individual task
         get("/tasks/:id", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
@@ -80,6 +89,15 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         //task: process a form to update a task
+
+//        post("/tasks/:id", (req, res) -> { //URL to update task on POST route
+//            Map<String, Object> model = new HashMap<>();
+//            String newContent = req.queryParams("description");
+//            int idOfTaskToEdit = Integer.parseInt(req.params("id"));
+//            taskDao.update(idOfTaskToEdit, newContent);
+//            res.redirect("/");
+//            return null;
+//        }, new HandlebarsTemplateEngine());
 //        post("/tasks/:id", (req, res) -> { //URL to update task on POST route
 //            Map<String, Object> model = new HashMap<>();
 //            String newContent = req.queryParams("description");

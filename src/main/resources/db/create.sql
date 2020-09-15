@@ -10,4 +10,5 @@ CREATE TABLE IF NOT EXISTS tasks(
 CREATE TABLE IF NOT EXISTS categories(
   id int PRIMARY KEY auto_increment,
   name VARCHAR
+-- complete BOOLEAN
 );

@@ -132,7 +132,6 @@ public class Sql2oTaskDaoTest {
         assertTrue(daoSize > 0 && daoSize > taskDao.getAll().size()); //this is a little overcomplicated, but illustrates well how we might use `assertTrue` in a different way.
     }
 
-
     //helper method for the tasks
 
     public Task setupNewTask(){

@@ -147,7 +147,8 @@ public class TaskTest {
     }
 
     //helper methods
-    public Task setupNewTask(){
+    public Task setupNewTask() {
         return new Task("Mow the lawn", 1);
     }
+
 }
