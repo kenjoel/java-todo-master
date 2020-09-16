@@ -26,10 +26,10 @@
                 {{#each categories}}
                     <li><a class="dropdown-item" href="/categories/{{id}}">{{name}}</a></li>
                 {{/each}}
-                <li><a class="dropdown-item btn btn-primary" href="/categories/new">Add a Category</a></li>
+                <li><a class="btn btn-primary dropdown-item" href="/categories/new">Add Category</a></li>
 
             {{else}}
-                <li><a class="dropdown-item btn btn-info" href="/categories/new">Add a Category</a></li>
+                <li><a class="btn btn-info dropdown-item"  href="/categories/new">Add Category</a></li>
             {{/if}}
         </ul>
     </li>
@@ -51,9 +51,8 @@
     <footer class="footer">
         <div class="container">
             <hr>
-            <p class="text-white">
-                <a href="/categories/delete">delete all categories & tasks</a><br>
-                <a href="/tasks/delete">delete all tasks</a>
+            <p style="margin-bottom: 0px">
+                <a class="btn btn-danger" href="/categories/delete">delete all categories & tasks</a><br>
             </p>
         </div>
     </footer>
