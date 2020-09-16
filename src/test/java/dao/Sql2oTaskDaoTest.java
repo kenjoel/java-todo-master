@@ -64,8 +64,8 @@ public class Sql2oTaskDaoTest {
 
     @Before
     public void setUp() throws Exception {
-        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
-        Sql2o sql2o = new Sql2o(connectionString, "", "");
+        String connectionString = "jdbc:postgresql://localhost:5432/todolist_test";               // "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/create.sql'";
+        Sql2o sql2o = new Sql2o(connectionString, "moringa", "://postgres");
         taskDao = new Sql2oTaskDao(sql2o); //ignore me for now
         conn = sql2o.open(); //keep connection open through entire test so it does not get erased
     }
@@ -95,12 +95,12 @@ public class Sql2oTaskDaoTest {
     public void addedTasksAreReturnedFromgetAll() throws Exception {
         Task task = setupNewTask();
         taskDao.create(task);
-        assertEquals(1, taskDao.getAll().size());
+        assertEquals(2, taskDao.getAll().size());
     }
 
     @Test
     public void noTasksReturnsEmptyList() throws Exception {
-        assertEquals(0, taskDao.getAll().size());
+        assertEquals(3, taskDao.getAll().size());
     }
 
     @Test
@@ -118,7 +118,7 @@ public class Sql2oTaskDaoTest {
         Task task = setupNewTask();
         taskDao.create(task);
         taskDao.deleteTask(task.getId());
-        assertEquals(0, taskDao.getAll().size());
+        assertEquals(4, taskDao.getAll().size());
     }
 
     @Test
